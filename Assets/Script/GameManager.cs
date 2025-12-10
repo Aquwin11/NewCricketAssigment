@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayBall()
     {
-        Debug.Log("BallStrength" + PowerMeter.GetStrength());
+        Debug.Log("TurnStrength" + PowerMeter.GetStrength());
         CreateBall();   
         //BallScript.SetupBallScript(pitchTransform, leftRightSlider, PowerMeter.GetStrength());
         /*BallScript.pitchCurveMultiplier = PowerMeter.GetStrength();

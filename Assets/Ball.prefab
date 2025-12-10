@@ -166,7 +166,7 @@ Transform:
   m_GameObject: {fileID: 6534275922485272902}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.53, y: 4.08, z: -14.42}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -269,13 +269,15 @@ MonoBehaviour:
   timer: 0
   ballDirection: {x: 0, y: 0, z: 0}
   leftRightSlider: 1
-  pitchCurve: 0
+  pitchCurve: 4
   pitchCurveMultiplier: 0
   pitchBounceValue: 0
   isSwing: 0
+  swingPitchOffset: {x: 0, y: 0, z: -1}
   curveDuration: 0.5
-  curveAmount: -35
+  curveAmount: 25
   isRight: 0
+  curveCorrection: 35
 --- !u!54 &4911905126391392408
 Rigidbody:
   m_ObjectHideFlags: 0

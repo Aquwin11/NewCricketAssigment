@@ -9,8 +9,8 @@ public class PitchController : MonoBehaviour
     Vector3 newDir;
     public float speed;
 
-    float xClamp;
-    float yClamp;
+    public Vector2 xClamp;
+    public Vector2 zClamp;
     public void Update()
     {
         inputValue.x = Input.GetAxisRaw("Horizontal");
@@ -32,11 +32,20 @@ public class PitchController : MonoBehaviour
         {
             manager.SideChange();
         }
+        HandleClamping();
     }
+
 
     public void HandleClamping()
     {
-        
+        Vector3 pos = transform.position;
+
+        pos.x = Mathf.Clamp(pos.x, xClamp.x, xClamp.y);
+        pos.y = transform.position.y;
+        pos.z = Mathf.Clamp(pos.z, zClamp.x, zClamp.y);
+
+        transform.position = pos;
+
     }
 
 }
