@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6609771120708839506}
-  - component: {fileID: 1563551139781023950}
+  - component: {fileID: 1615298015056313138}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -26,15 +26,15 @@ Transform:
   m_GameObject: {fileID: 624338255967060001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.9, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8191749821403655551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &1563551139781023950
-LineRenderer:
-  serializedVersion: 2
+--- !u!96 &1615298015056313138
+TrailRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -45,7 +45,7 @@ LineRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
-  m_MotionVectors: 0
+  m_MotionVectors: 2
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
@@ -53,7 +53,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,9 +74,8 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  m_Time: 5
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -85,20 +84,29 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.28520757
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -114,7 +122,7 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
+      atime1: 64995
       atime2: 0
       atime3: 0
       atime4: 0
@@ -122,19 +130,20 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 1
-    textureMode: 0
+    alignment: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
+  m_MinVertexDistance: 0.1
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
-  m_Loop: 0
+  m_Autodestruct: 0
+  m_Emitting: 1
   m_ApplyActiveColorSpace: 1
 --- !u!1 &6534275922485272902
 GameObject:
@@ -274,10 +283,17 @@ MonoBehaviour:
   pitchBounceValue: 0
   isSwing: 0
   swingPitchOffset: {x: 0, y: 0, z: -1}
-  curveDuration: 0.5
-  curveAmount: 25
+  curveDuration: 0.4
+  curveAmount: 18
+  curveAmountMax: 0
   isRight: 0
-  curveCorrection: 35
+  curveCorrection: 30
+  swingCorrectionOffset: {x: -2.5, y: 0, z: 1}
+  swingSpeed: 20
+  pitchZoffset: 3.5
+  swingPitchBounce: 10
+  swingPitchBounceMultipler: 0.65
+  swingCorrectionleft: {x: 0, y: 0, z: 0}
 --- !u!54 &4911905126391392408
 Rigidbody:
   m_ObjectHideFlags: 0
