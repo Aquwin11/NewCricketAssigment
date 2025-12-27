@@ -23,6 +23,7 @@ public class BallScript : MonoBehaviour
     public bool isSwing;
     public Vector3 swingPitchOffset;
     public float  curveDuration;
+    [Range(1, 100)]
     public float curveAmount;
     public float curveAmountMax;
     public bool isRight;
@@ -33,14 +34,12 @@ public class BallScript : MonoBehaviour
     public float swingPitchBounce;
     public float swingPitchBounceMultipler;
     public Vector3 swingCorrectionleft;
+    public bool swingPowerOverride;
     public void OnEnable()
     {
-        /*transform.position = startPos.position;
-        duration = Vector3.Distance(pitchPos.position, startPos.position);
-        ballDirection = CalculateDir();
-        Debug.Log("Distance " + duration);*/
         Destroy(gameObject,4f);
         curveAmountMax = curveAmount;
+        curveAmount /= 5;
     }
     float newStearingDir = 0;
     //float swingPitchOffset = 0;
@@ -75,7 +74,8 @@ public class BallScript : MonoBehaviour
             newStearingDir = 0;
 
         Debug.Log("Stearing dir" + newStearingDir);
-        curveAmount*= pitchCurveMultiplier;
+        if(!swingPowerOverride)
+            curveAmount*= pitchCurveMultiplier;
         pitchZoffset -= (curveAmount / 10);
         if (leftRightSlider > 0.34f)
             isRight = true;
@@ -222,7 +222,7 @@ public class BallScript : MonoBehaviour
                 pitchBounceValue = swingPitchBounce * (curveAmount / 10);//Calculating bounce based on the distance
                 pitchBounceValue = Mathf.Clamp(pitchBounceValue, 3.5f,12);
                 ballRB.velocity = Vector3.zero;
-                ballNewVelocity = new Vector3((pitchPos.position.x) + swingDir * ((curveAmount*4) + 0.75f) ,
+                ballNewVelocity = new Vector3((pitchPos.position.x) + swingDir * ((curveAmount*5)) ,
                     pitchBounceValue,
                     transform.forward.z * curveCorrection);
                 ballNewVelocity.Normalize();

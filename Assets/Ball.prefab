@@ -284,7 +284,7 @@ MonoBehaviour:
   isSwing: 0
   swingPitchOffset: {x: 0, y: 0, z: -1}
   curveDuration: 0.4
-  curveAmount: 18
+  curveAmount: 100
   curveAmountMax: 0
   isRight: 0
   curveCorrection: 30
@@ -294,6 +294,7 @@ MonoBehaviour:
   swingPitchBounce: 10
   swingPitchBounceMultipler: 0.65
   swingCorrectionleft: {x: 0, y: 0, z: 0}
+  swingPowerOverride: 1
 --- !u!54 &4911905126391392408
 Rigidbody:
   m_ObjectHideFlags: 0
